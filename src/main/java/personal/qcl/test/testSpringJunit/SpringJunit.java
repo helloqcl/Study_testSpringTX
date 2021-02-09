@@ -3,6 +3,9 @@ package personal.qcl.test.testSpringJunit;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component("SpringJunit")
 public class SpringJunit {
     @Value("100")
@@ -31,5 +34,15 @@ public class SpringJunit {
 
     public void setsName(String sName) {
         this.sName = sName;
+    }
+
+    //测试application 初始和销毁方法
+    @PostConstruct
+    public void initSp(){
+        System.out.println("this is init.");
+    }
+    @PreDestroy
+    public void destroySp(){
+        System.out.println("this is destroy.");
     }
 }
