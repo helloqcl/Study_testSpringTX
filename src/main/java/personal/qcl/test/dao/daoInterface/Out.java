@@ -2,8 +2,6 @@ package personal.qcl.test.dao.daoInterface;
 
 import personal.qcl.test.entities.User;
 
-public interface In {
-    //进账
-    User in(User user,double d1);
-
+public interface Out {
+    User out(User user,double d1);
 }
